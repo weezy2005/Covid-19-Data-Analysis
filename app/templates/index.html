@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Data Dashboard</title>
+</head>
+<body>
+    <h1>COVID-19 Data Dashboard</h1>
+
+    <h2>Infection Rates Over Time</h2>
+    <img src="{{ url_for('static', filename=visualizations['infection_rates']) }}" alt="Infection Rates">
+
+    <h2>Top 10 Countries by Vaccinations</h2>
+    <img src="{{ url_for('static', filename=visualizations['vaccination_trends']) }}" alt="Vaccination Trends">
+
+    <h2>Recovery Rates Heatmap</h2>
+    <img src="{{ url_for('static', filename=visualizations['recovery_heatmap']) }}" alt="Recovery Heatmap">
+
+    <h2>COVID-19 Case Predictions</h2>
+    <img src="{{ url_for('static', filename=visualizations['case_prediction']) }}" alt="Case Predictions">
+
+    <h2>Predict Future Cases</h2>
+    <form action="/predict" method="POST">
+        <label for="days">Enter number of days since start:</label>
+        <input type="number" id="days" name="days" required>
+        <button type="submit">Predict</button>
+    </form> 
+</body>
+</html>
